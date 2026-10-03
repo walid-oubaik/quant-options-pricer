@@ -23,5 +23,6 @@ def mc_price(S0, K, r, sigma, T, n_sims, option_type="call"):
 
     discounted = np.exp(-r*T) * payoffs    
     prix = discounted.mean()                
-    
+    ic95 = 1.96 * discounted.std(ddof=1) / np.sqrt(n_sims)   
+
     return prix, ic95 
