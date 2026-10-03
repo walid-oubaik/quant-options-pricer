@@ -11,18 +11,24 @@ prix théorique quand le nombre de simulations augmente,avec un intervalle de co
 """
 import numpy as np
 
+import numpy as np
 
 def mc_price(S0, K, r, sigma, T, n_sims, option_type="call"):
+    # Simulation du prix final par mouvement brownien géométrique (solution exacte de l'EDS)
     Z = np.random.default_rng().standard_normal(n_sims)
     S_T = S0 * np.exp((r - 0.5*sigma**2)*T + sigma*np.sqrt(T)*Z)
 
+    # Payoff à l'échéance
     if option_type == "call":
         payoffs = np.maximum(S_T - K, 0)
     else:
         payoffs = np.maximum(K - S_T, 0)
 
-    discounted = np.exp(-r*T) * payoffs    
-    prix = discounted.mean()                
-    ic95 = 1.96 * discounted.std(ddof=1) / np.sqrt(n_sims)   
+    # Actualisation et estimation Monte Carlo (moyenne des payoffs actualisés)
+    discounted = np.exp(-r*T) * payoffs
+    prix = discounted.mean()
 
-    return prix, ic95 
+    # Intervalle de confiance à 95%
+    ic95 = 1.96 * discounted.std(ddof=1) / np.sqrt(n_sims)
+
+    return prix, ic95
