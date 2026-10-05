@@ -10,11 +10,11 @@ Ce projet s'inscrit dans mon objectif de carrière en quant trading et risk mana
 
 ## Objectifs
 
-- [ ] Implémenter le prix fermé de Black-Scholes (call/put)
-- [ ] Implémenter les grecques (Delta, Gamma, Vega, Theta)
-- [ ] Implémenter une simulation Monte Carlo du prix
-- [ ] Comparer et faire converger les deux méthodes
-- [ ] Documenter les résultats avec des graphiques
+- [X] Implémenter le prix fermé de Black-Scholes (call/put)
+- [X] Implémenter les grecques (Delta, Gamma, Vega, Theta)
+- [X] Implémenter une simulation Monte Carlo du prix
+- [X] Comparer et faire converger les deux méthodes
+- [X] Documenter les résultats avec des graphiques
 
 ## Théorie
 
@@ -44,11 +44,12 @@ où $N(\cdot)$ est la fonction de répartition de la loi normale. C'est cette fo
 quant-options-pricer/
 ├── src/
 │   ├── black_scholes.py    # Pricing fermé + grecques
-│   └── monte_carlo.py      # Simulation Monte Carlo
+│   ├── monte_carlo.py      # Simulation Monte Carlo
+│   └── main.py             # Comparaison BS / MC et graphique
 ├── tests/
 │   └── test_convergence.py # Vérifie que MC converge vers Black-Scholes
-├── figures/                 # Graphiques générés
-├── notebooks/                # Explorations / brouillons
+├── figures/                # Graphiques générés
+├── notebooks/              # Explorations / brouillons
 ├── requirements.txt
 └── README.md
 ```
@@ -109,4 +110,5 @@ Le graphique ci-dessous compare les deux méthodes pour une gamme de strikes (70
 
 ## Auteur
 
+[WALID OUBAIK] — [github.com/walid-oubaik](https://github.com/walid-oubaik)
 
