@@ -57,19 +57,28 @@ quant-options-pricer/
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate   # sous Windows : venv\Scripts\activate
+source venv/bin/activate   
 pip install -r requirements.txt
 ```
-
 ## Utilisation
 
-<!-- TODO : une fois ton code écrit, explique comment le lancer. -->
 
 ## Résultats
+## Résultats
 
-<!-- TODO : insère tes graphiques ici une fois générés, avec un
-     commentaire sur ce qu'ils montrent (convergence, précision,
-     comportement des grecques...). -->
+Pour une option call avec S0=100, K=100, r=5%, σ=20%, T=1 an :
+
+| Méthode | Prix |
+|---|---|
+| Black-Scholes (exact) | 10.4506 |
+| Monte Carlo (100 000 simulations) | 10.4785 ± 0.0910 (IC 95%) |
+
+L'écart entre les deux méthodes (≈ 0.03) est bien inférieur à la marge d'erreur de Monte Carlo, ce qui confirme la convergence de la simulation vers la solution analytique.
+
+Le graphique ci-dessous compare les deux méthodes pour une gamme de strikes (70 à 130) :
+
+![Comparaison Black-Scholes vs Monte Carlo](figures/comparaison_bs_mc.png)
+
 
 ## Pistes d'extension
 
@@ -79,4 +88,4 @@ pip install -r requirements.txt
 
 ## Auteur
 
-<!-- Ton nom, éventuellement un lien vers ton profil / CV -->
+
