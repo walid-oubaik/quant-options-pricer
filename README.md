@@ -110,5 +110,5 @@ Le graphique ci-dessous compare les deux méthodes pour une gamme de strikes (70
 
 ## Auteur
 
-[WALID OUBAIK] — [github.com/walid-oubaik](https://github.com/walid-oubaik)
+WALID OUBAIK — [github.com/walid-oubaik](https://github.com/walid-oubaik)
 
