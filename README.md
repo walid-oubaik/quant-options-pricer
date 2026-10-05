@@ -61,9 +61,30 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ## Utilisation
+Lancer la comparaison Black-Scholes / Monte Carlo (génère le graphique dans `figures/`) :
+
+```bash
+python3 src/main.py
+```
+
+Utiliser les fonctions dans un script Python :
+
+```python
+from black_scholes import bs_price, bs_greeks
+from monte_carlo import mc_price
+
+prix = bs_price(100, 100, 0.05, 0.20, 1.0, "call")
+greeks = bs_greeks(100, 100, 0.05, 0.20, 1.0, "call")
+prix_mc, ic95 = mc_price(100, 100, 0.05, 0.20, 1.0, 100000, "call")
+```
+
+Vérifier la convergence :
+
+```bash
+python3 tests/test_convergence.py
+```
 
 
-## Résultats
 ## Résultats
 
 Pour une option call avec S0=100, K=100, r=5%, σ=20%, T=1 an :
