@@ -7,10 +7,8 @@ Principe général : au lieu de résoudre l'équation de Black-Scholes analytiqu
 on simule un grand nombre de trajectoires possibles du prix de l'actif, on calcule
 le gain (payoff) de l'option pour chaque scénario, puis on moyenne ces gains
 actualisés. D'après la loi des grands nombres, cette moyenne converge vers le
-prix théorique quand le nombre de simulations augmente,avec un intervalle de confiance à 95%.
+prix théorique quand le nombre de simulations augmente, avec un intervalle de confiance à 95%.
 """
-import numpy as np
-
 import numpy as np
 
 def mc_price(S0, K, r, sigma, T, n_sims, option_type="call"):
