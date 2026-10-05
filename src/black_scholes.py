@@ -25,7 +25,7 @@ def bs_greeks(S0, K, r, sigma, T, option_type="call"):
    if option_type=="call":
       delta=norm.cdf(d1) 
    else:
-      delta=norm.pdf(d1)-1 
+      delta=norm.cdf(d1) - 1 
    terme_commun = -(S0 * norm.pdf(d1) * sigma) / (2 * np.sqrt(T))   
    if option_type == "call":
         theta = terme_commun - r * K * np.exp(-r*T) * norm.cdf(d2)
@@ -42,6 +42,7 @@ def bs_greeks(S0, K, r, sigma, T, option_type="call"):
         "vega": vega,
         "theta": theta,
         "rho": rho }    
+
 
 
     
